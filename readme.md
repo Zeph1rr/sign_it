@@ -8,7 +8,7 @@ Author: Zeph1rr <grianton535@gmail.com>
 
 ## INSTALATION
 
-	git clone git@github.com:Zeph1rr/sign_it.git
+	git clone https://github.com/Zeph1rr/sign_it.git
 	cd sign_it
 	sudo chmod +x sign_it.sh
 	sudo ./sign_it.sh
