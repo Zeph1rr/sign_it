@@ -3,6 +3,7 @@
 ## INFO
 
 Version: 1.0.0
+
 Author: Zeph1rr <grianton535@gmail.com>
 
 ## INSTALATION
