@@ -38,5 +38,5 @@ jobs:
           commit_prefix: "[AUTO]"
           commit_message: "release version ${{github.event.commits[0].message}"
           force: false
-          target_branch: release/${{github.event.commits[0].message}
+          target_branch: release/${{github.event.commits[0].message}}
 
