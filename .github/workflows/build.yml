@@ -23,7 +23,12 @@ jobs:
           pip install -r requirements.txt
 
       - name: build
-        run: pyinstaller -F -n sign_it --add-data src:./ ./src/main.py
+        run:
+          pyinstaller -F -n sign_it_github.event.commits[0].message --add-data src:./ ./src/main.py
+
+      - name: preparing for push
+        run: |
+          rm -rf $(ls | grep -v dist)
 
       - name: commit and push
         uses: devops-infra/action-commit-push@master
@@ -31,7 +36,7 @@ jobs:
           github_token: "${{ secrets.ACCESS_TOKEN }}"
           add_timestamp: false
           commit_prefix: "[AUTO]"
-          commit_message: "release new version"
+          commit_message: "release version github.event.commits[0].message"
           force: false
           target_branch: release
 
