@@ -25,7 +25,6 @@ jobs:
       - name: build
         run: |
           pyinstaller -F -n sign_it_${{github.event.commits[0].message}} --add-data src:./ ./src/main.py
-          git merge release
 
       - name: preparing for push
         run: |
@@ -37,7 +36,7 @@ jobs:
           github_token: "${{ secrets.ACCESS_TOKEN }}"
           add_timestamp: false
           commit_prefix: "[AUTO]"
-          commit_message: "release version github.event.commits[0].message"
+          commit_message: "release version ${{github.event.commits[0].message}"
           force: false
-          target_branch: release
+          target_branch: release/${{github.event.commits[0].message}
 
