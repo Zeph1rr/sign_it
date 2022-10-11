@@ -23,8 +23,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: build
-        run:
-          pyinstaller -F -n sign_it_github.event.commits[0].message --add-data src:./ ./src/main.py
+        run: |
+          git merge release
+          pyinstaller -F -n sign_it_${{github.event.commits[0].message}} --add-data src:./ ./src/main.py
 
       - name: preparing for push
         run: |
