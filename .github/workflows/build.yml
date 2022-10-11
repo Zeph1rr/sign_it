@@ -36,7 +36,7 @@ jobs:
           github_token: "${{ secrets.ACCESS_TOKEN }}"
           add_timestamp: false
           commit_prefix: "[AUTO]"
-          commit_message: "release version ${{github.event.commits[0].message}"
+          commit_message: "release version ${{github.event.commits[0].message}}"
           force: false
           target_branch: release/${{github.event.commits[0].message}}
 
