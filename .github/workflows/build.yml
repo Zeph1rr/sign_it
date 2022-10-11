@@ -27,7 +27,7 @@ jobs:
       - name: commit and push
         uses: devops-infra/action-commit-push@master
         with:
-          github_token: "${{ secrets.ACCESS_TOKEN }}"
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
           add_timestamp: false
           commit_prefix: "[AUTO]"
           commit_message: "release version ${{github.event.commits[0].message}}!"
