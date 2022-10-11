@@ -7,6 +7,7 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    if: ${{ contains(_, github.event.commits[0].message) }}
     steps:
       - name: Check-out repository
         uses: actions/checkout@v2
@@ -22,7 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: build
-        run: pyinstaller -F -n sign_it_${{github.event.commits[0].message}} --add-data src:./ ./src/main.py
+        run: pyinstaller -F -n sign_it --add-data src:./ ./src/main.py
 
       - name: commit and push
         uses: devops-infra/action-commit-push@master
@@ -30,7 +31,7 @@ jobs:
           github_token: "${{ secrets.ACCESS_TOKEN }}"
           add_timestamp: false
           commit_prefix: "[AUTO]"
-          commit_message: "release version ${{github.event.commits[0].message}}!"
+          commit_message: "release new version"
           force: false
           target_branch: release
 

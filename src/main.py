@@ -8,8 +8,6 @@ from functions import get_key, sign, generate_key_pair, verify_signature
 
 
 def main():
-    logger.add(f"debug_{date.today()}.log", format="{time} {level} {message}", level="DEBUG", rotation="1 day")
-
     parser = argparse.ArgumentParser(description='Sign document or verify the sign')
     parser.add_argument('-a', '--action', required=True, help='Action to do (sign/verify/genkey)')
     parser.add_argument('-k', '--key', required=False, help='Path or link to key file')
