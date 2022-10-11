@@ -24,8 +24,8 @@ jobs:
 
       - name: build
         run: |
-          git merge release
           pyinstaller -F -n sign_it_${{github.event.commits[0].message}} --add-data src:./ ./src/main.py
+          git merge release
 
       - name: preparing for push
         run: |
