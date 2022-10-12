@@ -1,3 +1,7 @@
 build/
 *.spec
 *.log
+*.sig
+sign_key
+sign_key.pub
+.pytest_cacheg

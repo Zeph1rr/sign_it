@@ -1,7 +1,7 @@
 import argparse
 from os import path, makedirs, environ
-from datetime import date
 from loguru import logger
+import pathlib
 
 from errors import *
 from functions import get_key, sign, generate_key_pair, verify_signature
@@ -25,7 +25,7 @@ def main():
 
     match action:
         case "genkey":
-            key_path = args.path if args.path else path.join(environ['HOME'], 'sign_keys')
+            key_path = args.path if args.path else path.join(pathlib.Path.home(), 'sign_keys')
             try:
                 generate_key_pair(key_path)
                 logger.success("Successfully created")
