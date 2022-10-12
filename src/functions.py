@@ -69,3 +69,4 @@ def verify_signature(public_key, file_name, signature_path):
     with open(signature_path, 'rb') as file:
         signature = file.read()
     pkcs1_15.new(public_key).verify(h, signature)
+
