@@ -1,0 +1,2 @@
+class UnavailableActionError(Exception):
+    pass
