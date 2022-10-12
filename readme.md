@@ -1,9 +1,11 @@
 # SIGN IT
 
+
+
 ## INFO
 
-Version: 1.0.0
-Python: 3.10.x
+- Version: 1.0.0
+- Python: 3.10.x
 
 Author: Zeph1rr <grianton535@gmail.com>
 
